@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+class AreaCalculation {
+    static double calcArea(double r){
+        return 22*r*r/7;
+    }
+    static double calcArea(double l, double b){
+        return l*b;
+    }
+    static double calcArea(double a, double b, double c){
+        double s = (a+b+c)/2;
+        return (double) Math.sqrt(s * (s - a) * (s - b) * (s - c));
+    }
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Enter the radius of circle: ");
+        double r = scan.nextDouble();
+        System.out.println("The area of the circle is " + calcArea(r) + "\n");
+        System.out.print("Enter the length and breadth of rectangle: ");
+        double p = scan.nextDouble(), q = scan.nextDouble();
+        System.out.println("The area of the rectangle is " + calcArea(p, q) + "\n");
+        System.out.print("Enter the sides of triangle: ");
+        double a = scan.nextDouble(), b = scan.nextDouble(), c = scan.nextDouble();
+        System.out.println("The area of the triangle is " + calcArea(a, b, c) + "\n");
+        scan.close();
+    }
+}
